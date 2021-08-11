@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="container">
+    <header class="logo">
+        <h2 class="headline">Vanilla JavaScript Todo App</h2>
+    </header>
+
+    <div class="main"> 
+        <form>
+            <input type="text" placeholder="New Todo ...">
+            <!-- <label class="DateLabel" for="usr">Due Date:</label> -->
+            <input type="date" id="due-date" class="form-control" placeholder="Due date">
+            <button type="submit"><i class="fas fa-plus-square"></i></button>
+        </form>
+
+        <div class="todoList">
+            <ul>
+            </ul>
+            <a class="clearAll" id="clearAll">Clear All</a>
+        </div>
+    </div>
+    <script type="text/JavaScript" src="./app.js"></script>
+    <!-- <script type="module" src="./index.js"></script> -->
+</body>
+</html>
