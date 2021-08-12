@@ -1,8 +1,8 @@
-document.querySelector('form').addEventListener('submit', handleSubmitForm);
+// document.querySelector('form').addEventListener('submit', handleSubmitForm);
 
-document.querySelector('ul').addEventListener('click', handleClickDeleteOrCheck);
+// document.querySelector('ul').addEventListener('click', handleClickDeleteOrCheck);
 
-document.getElementById('clearAll').addEventListener('click', handleClearAll);
+// document.getElementById('clearAll').addEventListener('click', handleClearAll);
 
 function handleSubmitForm(e) {
     e.preventDefault();
@@ -19,11 +19,13 @@ function addTodo(todo,dueDate) {
     let dueMessage="";
     var today = new Date();
     var due = new Date(dueDate);
-    if(due.getDate()<today.getDate()){
-        li.style.backgroundColor="rgb(255, 105, 97)";
-    }
-    if(today.getDate()+1==due.getDate()){
-        dueMessage="Due Tommorow";
+    if (due.getMonth() == today.getMonth() && due.getFullYear() == today.getFullYear()) {
+        if (due.getDate() < today.getDate()) {
+            li.style.backgroundColor = "rgb(255, 105, 97)";
+        }
+        if (today.getDate() + 1 == due.getDate()) {
+            dueMessage = "Due Tommorow";
+        }
     }
     li.innerHTML = `
         <span class="todo-item">${todo} Due Date ${dueDate} ${dueMessage}</span>
@@ -65,7 +67,4 @@ function handleClearAll(e) {
     document.querySelector('ul').innerHTML = '';
 }
 
-
-
-// export {addTodo, checkTodo, handleSubmitForm, handleClickDeleteOrCheck,handleClearAll, deleteTodo}
-
+export {addTodo, checkTodo, handleSubmitForm, handleClickDeleteOrCheck,handleClearAll, deleteTodo}
