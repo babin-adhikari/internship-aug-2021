@@ -1,4 +1,4 @@
-import { addItem, getItems, isCompleted, removeItemByName } from './store.js'
+import { addItem, getItems, removeItemByName } from './store.js'
 
 function addTodo(todo, dueDate) {
     let ul = document.querySelector('ul');
