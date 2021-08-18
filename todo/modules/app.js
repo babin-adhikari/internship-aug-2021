@@ -1,4 +1,4 @@
-import { addItem, getItems, removeItemByName } from './store.js'
+import { addItem, getItems, removeItemByName, updateCompletedStatusByName } from './store.js'
 
 function addTodo(todo, dueDate) {
     let ul = document.querySelector('ul');
@@ -10,11 +10,11 @@ function addTodo(todo, dueDate) {
         li.style.backgroundColor = "rgb(255, 105, 97)";
     }
     if (today.date() + 1 == due.date()) {
-        dueMessage = "Due Tommorow";
+        dueMessage = " Due Tommorow";
     }
 
     li.innerHTML = `
-        <span class="todo-item">${todo} Due Date ${dueDate} ${dueMessage}</span>
+        <span class="todo-item">${todo}</span> <span class="due-date">Due Date ${dueDate} </span><span class="due-message"> !${dueMessage}</span>
         <button name="checkButton"><i class="fas fa-check-square"></i></button>
         <button name="deleteButton" ><i class="fas fa-trash"></i></button>
     `;
@@ -35,12 +35,14 @@ function addTodo(todo, dueDate) {
 
 function checkTodo(e) {
     let item = e.target.parentNode;
-    console.log(item);
     if (item.style.textDecoration == 'line-through'){
         item.style.textDecoration = 'none';
-        // isCompleted(item.innerText);
+        console.log(item.textContent)
+        updateCompletedStatusByName(item.innerText,false,null)
     }else{
         item.style.textDecoration = 'line-through';
+        console.log(item.innerText)
+        updateCompletedStatusByName(item.innerText,true,moment())
     }    
 }
 
