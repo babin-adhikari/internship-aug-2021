@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="#">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <h2>Insert Form</h2>
+        <!-- <h4>First Name</h4> -->
+        <label for="first-name">First Name</label><br>
+        <input type="text" id="first-name"><br>
+
+        <label for="last-name">Last Name</label><br>
+        <input type="text" id="last-name"><br>
+        
+        <label for="email">Email</label><br>
+        <input type="text" id="email"><br><br>
+
+        <input type="submit" id="submit" value="Submit"><br><br>
+        
+        <!-- <button type="submit" id="submit">Submit</button><br><br> -->
+    </form>
+
+    <label for="show-entries">Show </label>
+    <select id="show-entries" style="width: 100px;">
+        <!-- <option id="1">1</option> -->
+    </select>
+    <label for="show-entries"> entries</label><br><br>
+    
+    <label for="search-bar">Search: </label>
+    <input type="text" id="search-bar"><br><br>
+
+    <table border="1" style="width: 800px;" id="main-table">
+        <tbody id="table-header"></tbody>
+            <tr>
+                <td>Id</td>
+                <td>Email</td>
+                <td>First Name</td> 
+                <td>Last Name</td>
+                <td>Change Details</td>
+            </tr>
+        </tbody>
+
+        <tbody id="table-1">
+
+        </tbody>
+
+        <tbody id="table-2">
+
+        </tbody>
+    </table>
+
+    <p id="noOf-entries">Showing 1 to 1 of 1 entries</p>
+
+    <div id="navigation-buttons">
+        <button id="button-previous">Previous</button>
+        <button id="button-1">1</button>
+        <button id="button-next">Next</button>
+    </div>
+
+    <script type="text/javascript" defer src="app.js"></script>
+</body>
+</html>
